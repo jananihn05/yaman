@@ -5,7 +5,7 @@ pipeline {
         stages {
                  stage ('checkoutSCM') {
                      steps {
-                         git branch: 'main', credentialsId: 'jenkins-mavenfinal', url: 'https://github.com/kumardutt/javawebapp.git'
+                         git branch: 'main', credentialsId: 'jenkins-mavenfinal', url: https://github.com/kumardutt/yaman.git'
                            }
                                        }
         stage ('build') {
