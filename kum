@@ -1,0 +1,43 @@
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.1.176:6443 --token milxxv.d0nya6tkfiyk14wd \
+        --discovery-token-ca-cert-hash sha256:63f7ab61dc7d60a493508fde900464949b2a9a510b97eb11f836fb1f2eee7039
+root@ip-172-31-1-176:/home/ubuntu#
+
+
+
+wasim 
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.10.150:6443 --token 4115cr.8j7npxokrh3qftmt \
+        --discovery-token-ca-cert-hash sha256:467a439acde74e1d9848fe143752968b8d874357f12900b24bfd4ef1d8085aab
+ubuntu@ip-172-31-10-150:~$
