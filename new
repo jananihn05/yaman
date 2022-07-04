@@ -3,3 +3,11 @@ stage('build docker-image') {
                 sh 'docker build -t july1artifact .'
             }   
         }
+---
+stage('push image to nexus-artifactory') {
+            steps { 
+                sh 'docker tag artifactimage:1.0 65.0.135.232:8090/artifactimage'
+                sh 'docker login -u admin -p admin 65.0.135.232:8090'
+                sh 'docker push 65.0.135.232:8090/artifactimage'
+            }   
+        }
